@@ -16,6 +16,12 @@ public class Application {
 
     @RequestMapping(value = "/greeting", produces = "text/plain")
     public String greeting() {
-        return "Hello from webfrontend";
+        System.out.println("Hello");
+        return "Hello wscns ";
+    }
+
+    @RequestMapping(value = "/greeting/{name}", produces = "text/plain")
+    public String greetingTo(@PathVariable("name") String name) {
+        return "Hello " + name;
     }
 }
